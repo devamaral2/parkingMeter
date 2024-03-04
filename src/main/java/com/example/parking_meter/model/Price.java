@@ -1,14 +1,23 @@
 package com.example.parking_meter.model;
 
-import lombok.Data;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
 @Document
 @Data
+@Builder
+@Getter
+@Setter
+@RequiredArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Price {
-    private String price_per_hour;
+    @Id
+    private String id;
+    private Number price_per_hour;
     private LocalDateTime start_date;
     private LocalDateTime end_date;
 }
