@@ -18,6 +18,7 @@ Passos:
 - 1 Instalar as dependẽncias com o maven
 - 2 Criar o container executando o comando `docker compose up -d` para iniciar o servidor mongo e criar um volume para o banco de dados ser salvo
 - 3 Rodar o projeto executando o comando `nvm spring-boot:run` ou com o método da sua escolha
+
 Obs: Para ficar mais facil e acessivel rodar o projeto localmente optamos por não distribuir os dados em cluster, mas a ideia é que em produção ele seja criado desta forma para uma maior escalabilidade da aplicação.
 
 # :hammer: Funcionalidades do projeto
