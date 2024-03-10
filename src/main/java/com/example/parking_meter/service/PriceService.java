@@ -1,7 +1,7 @@
 package com.example.parking_meter.service;
 
-import com.example.parking_meter.model.Price;
+import org.springframework.http.ResponseEntity;
 
 public interface PriceService {
-    Price create(Number price);
+    ResponseEntity create(Number price);
 }
