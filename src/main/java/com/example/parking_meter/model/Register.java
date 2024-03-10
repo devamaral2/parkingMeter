@@ -2,6 +2,7 @@ package com.example.parking_meter.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -24,4 +25,6 @@ public class Register {
     private LocalDateTime end_date;
     @DBRef
     private Price price;
+    @Version
+    private Long version;
 }

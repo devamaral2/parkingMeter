@@ -17,15 +17,14 @@ public class RegisterController {
     private RegisterServiceImpl registerServiceImpl;
 
     @PostMapping
-    public Register startRegister(@RequestBody CreateRegisterDto createRegisterDto) {
+    public ResponseEntity startRegister(@RequestBody CreateRegisterDto createRegisterDto) {
         String plate = createRegisterDto.vehiclePlate();
         return this.registerServiceImpl.startRegister(plate);
     }
 
     @PatchMapping("/{registerId}")
-    public Register endRegister(@PathVariable String registerId) {
-//        return this.registerServiceImpl.endRegister(registerId);
-        return null;
+    public ResponseEntity endRegister(@PathVariable String registerId) {
+        return this.registerServiceImpl.endRegister(registerId);
     }
 
     @GetMapping

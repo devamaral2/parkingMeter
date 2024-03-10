@@ -1,9 +1,10 @@
 package com.example.parking_meter.controller;
 
 import com.example.parking_meter.dto.CreatePriceDto;
-import com.example.parking_meter.model.Price;
 import com.example.parking_meter.service.impl.PriceServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +17,8 @@ public class PriceController {
     private PriceServiceImpl priceServiceImpl;
 
     @PostMapping
-    public Price startRegister(@RequestBody CreatePriceDto createPriceDto) {
-        Number price = createPriceDto.price();
+    public ResponseEntity startRegister(@RequestBody @Valid CreatePriceDto createPriceDto) {
+        Long price = createPriceDto.price().longValue();
         return this.priceServiceImpl.create(price);
     }
 }

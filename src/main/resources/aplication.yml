@@ -6,4 +6,4 @@ spring:
       database: db-mongo
       username: admin
       password: 12345
-      uri: mongodb://localhost/parking_meter
+      uri: mongodb://localhost/parking_meter?retryWrites=false
