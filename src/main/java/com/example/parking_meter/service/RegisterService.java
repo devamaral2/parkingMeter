@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
 public interface RegisterService {
-    ResponseEntity startRegister(String plate);
+    ResponseEntity startRegister(String plate, String parkingMeterId);
 
     ResponseEntity endRegister(String registerId);
 

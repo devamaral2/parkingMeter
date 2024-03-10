@@ -39,7 +39,7 @@ public class RegisterServiceImpl implements RegisterService {
 
     @Override
     @Transactional
-    public ResponseEntity startRegister(String plate) {
+    public ResponseEntity startRegister(String plate, String parkingMeterId) {
         Query query = new Query(Criteria.where("end_date").exists(false));
 
         Price actualPrice = this.mongoTemplate.findOne(query, Price.class);
@@ -57,6 +57,7 @@ public class RegisterServiceImpl implements RegisterService {
                 .start_date(LocalDateTime.now())
                 .veichle_plate(plate)
                 .price(actualPrice)
+                .parking_meter_id(parkingMeterId)
                 .build();
         try {
 

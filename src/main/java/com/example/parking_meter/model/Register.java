@@ -21,6 +21,7 @@ public class Register {
     @Id
     private String id;
     private String veichle_plate;
+    private String parking_meter_id;
     private LocalDateTime start_date;
     private LocalDateTime end_date;
     @DBRef

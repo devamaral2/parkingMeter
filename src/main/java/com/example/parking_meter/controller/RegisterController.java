@@ -3,6 +3,7 @@ package com.example.parking_meter.controller;
 import com.example.parking_meter.dto.CreateRegisterDto;
 import com.example.parking_meter.model.Register;
 import com.example.parking_meter.service.impl.RegisterServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,9 +18,10 @@ public class RegisterController {
     private RegisterServiceImpl registerServiceImpl;
 
     @PostMapping
-    public ResponseEntity startRegister(@RequestBody CreateRegisterDto createRegisterDto) {
+    public ResponseEntity startRegister(@RequestBody @Valid CreateRegisterDto createRegisterDto) {
         String plate = createRegisterDto.vehiclePlate();
-        return this.registerServiceImpl.startRegister(plate);
+        String parkingMeterId = createRegisterDto.parkingMeterId();
+        return this.registerServiceImpl.startRegister(plate, parkingMeterId);
     }
 
     @PatchMapping("/{registerId}")
