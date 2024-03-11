@@ -30,7 +30,6 @@ Obs: Para ficar mais facil e acessivel rodar o projeto localmente optamos por n√
 
 # Tecnologias Utilizadas
   - Mongo DB 
-  - RabbitMQ 
   - Docker 
   - Java
 
