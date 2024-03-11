@@ -1,9 +1,0 @@
-spring:
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: db-mongo
-      username: admin
-      password: 12345
-      uri: mongodb://localhost/parking_meter
