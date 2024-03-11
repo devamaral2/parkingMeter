@@ -32,7 +32,9 @@ Obs: Para ficar mais facil e acessivel rodar o projeto localmente optamos por n�
   - Docker 
   - Java
 
-# Link Swagger : 
+
+Para acessar a documentação via Swagger é necessário que a aplicação esteja rodando com o comando mvn spring-boot:run e acessar a página .
+# Link Swagger : https://localhost:8080/swagger-ui/index.html#/
 
 
 
