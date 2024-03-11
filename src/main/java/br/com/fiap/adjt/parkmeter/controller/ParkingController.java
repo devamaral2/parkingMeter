@@ -72,5 +72,12 @@ public class ParkingController {
     	parkingRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
+    
+    @PostMapping("/parking/publish")
+    public ResponseEntity<?> publish(@RequestBody final ParkingDTO parkingDTO) {
+    	ParkingDTO publish = parkingService.publish(parkingDTO);
+    	
+        return ResponseEntity.ok(publish);
+    }
 
 }

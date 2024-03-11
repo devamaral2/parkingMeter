@@ -10,13 +10,43 @@ management:
       exposure:
         include: prometheus
 server:
-  port: 8080
+  port: 8081
 spring:
   data:
     mongodb:
       uri: ${MONGODB_URI}
+
+  rabbitmq:
+    host: ${rabbitmq.host}
+    port: ${rabbitmq.port}
+    username: ${rabbitmq.user}
+    password: ${rabbitmq.password}
+    ssl:
+      enabled: false
+    
+    exchange:
+      app: exchange-parking-meter
+    queue:
+      app: app-parking-meter
+    routingKey:
+      app: routingKey-parking-meter
+    queue-error:
+      app: queue-error-parking-meter
+    
+    listener:
+      simple:
+        concurrency: 5
+        max-concurrency: 10
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 1s
+          multiplier: 2
+        default-requeue-rejected: true
       
       
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+    

@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "c166096c-43a2-4575-824a-fb77010d03c7",
+		"name": "ParkingMeter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10581098",
+		"_collection_link": "https://speeding-firefly-204013.postman.co/workspace/Labs~6d81df6c-41ee-4a32-9130-7a0b2c010267/collection/10581098-c166096c-43a2-4575-824a-fb77010d03c7?action=share&source=collection_link&creator=10581098"
+	},
+	"item": [
+		{
+			"name": "save-parking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parkingMeter\": {\n        \"id\": \"65ef3f05107314362413c58b\",\n        \"endereco\": {\n            \"logradouro\": \"logradouro\",\n            \"numero\": 999,\n            \"bairro\": \"bairro\",\n            \"cidade\": \"cidade\",\n            \"uf\": \"SP\"\n        }\n    },\n    \"veichle\": {\n        \"plate\": \"ACB1012\",\n        \"description\": \"GOL PRATA\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingmeter/parking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingmeter",
+						"parking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-unparking",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parkingMeter\": {\n        \"id\": \"65ef3f05107314362413c58b\",\n        \"endereco\": {\n            \"logradouro\": \"logradouro\",\n            \"numero\": 999,\n            \"bairro\": \"bairro\",\n            \"cidade\": \"cidade\",\n            \"uf\": \"SP\"\n        }\n    },\n    \"veichle\": {\n        \"plate\": \"ACB1012\",\n        \"description\": \"GOL PRATA\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingmeter/unparking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingmeter",
+						"unparking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-parking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parkingmeter/parking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingmeter",
+						"parking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-parkmeter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": null,\n    \"endereco\": {\n        \"logradouro\": \"logradouro\",\n        \"numero\": 999,\n        \"bairro\": \"bairro\",\n        \"cidade\": \"cidade\",\n        \"uf\": \"SP\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingmeter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingmeter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-parkmeter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parkingmeter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingmeter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-veichle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": null,\n    \"veichlePlate\": \"ACB1012\",\n    \"parking\": \"2024-03-11T12:21:16.666+00:00\",\n    \"unParking\": \"2024-03-11T15:21:16.666+00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingmeter/veichle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingmeter",
+						"veichle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-veichle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parkingmeter/veichle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingmeter",
+						"veichle"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
